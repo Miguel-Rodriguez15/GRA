@@ -8,7 +8,7 @@ require_once "Config/Config.php";
     if(!empty($array[1])){
         if(!empty($array[1]!="")){
           $metodo = $array[1];
-        }
+        } 
     }
     if(!empty($array[2])){
         if(!empty($array[2]!="")){
@@ -16,8 +16,8 @@ require_once "Config/Config.php";
              $parametro .= $array[$i]. ",";
            }
            $parametro = trim($parametro, ",");
-          }
-    }
+          } 
+    }  
     require_once "Config/App/autoload.php";
     $dirControllers  = "controllers/" .$controller.".php";
     if(file_exists($dirControllers)){

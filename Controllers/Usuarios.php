@@ -7,6 +7,11 @@ class Usuarios extends Controller{
     public function index(){
      $this->views->getView($this, "index");
     }
+     public function listar(){
+       $data = $this->model->getUsuarios();
+       echo json_encode($data, JSON_UNESCAPED_UNICODE);
+       die();
+    }
     public function validar(){
         if (empty($_POST['usuario']) || empty($_POST['clave']) ) {
            $msg = "los campos estan vacios";
