@@ -14,7 +14,23 @@ document.addEventListener("DOMContentLoaded", function(){
     },
     {
       'data' : 'nombre' 
-    }
+    },
+    {
+      'data' : 'apellido' 
+    },
+    {
+      'data' : 'rol' 
+    },
+    {
+      'data' : 'telefono' 
+    },
+    {
+      'data' : 'email' 
+    },
+    {
+      'data' : 'password' 
+    },
+    
   ]
   });
 })
