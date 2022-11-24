@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
       'data' : 'apellido' 
     },
     {
-      'data' : 'rol' 
+      'data' : 'nombre_rol' 
     },
     {
       'data' : 'telefono' 

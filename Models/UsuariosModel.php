@@ -11,7 +11,7 @@ class UsuariosModel extends Query{
      }
      public function getUsuarios(){
 
-      $sql = "SELECT * FROM usuarios";
+      $sql = "SELECT u.*, r.id_roles, r.nombre_rol FROM usuarios u INNER JOIN roles r where u.rol = r.id_roles";
       $data = $this->selectAll($sql);
       return $data;
    }
