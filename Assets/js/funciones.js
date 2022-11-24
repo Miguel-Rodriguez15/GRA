@@ -1,13 +1,21 @@
+
 let tblUsuarios;
-document.addEventListener("DomContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
   tblUsuarios = $('#tblUsuarios').DataTable({
     ajax: {
-        url: base_url + '/Usuarios/listar',
+        url: base_url + '/Usuarios/Listar',
         dataSrc: ''
     },
     columns: [{ 
-      'data' : 'id'
-    }]
+      'data' : 'id'      
+    },
+    {
+    'data' : 'cedula'
+    },
+    {
+      'data' : 'nombre' 
+    }
+  ]
   });
 })
 

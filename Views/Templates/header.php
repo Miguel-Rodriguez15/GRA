@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,7 +51,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url;?>Usuarios">Usuarios</a>
+                                    <a class="nav-link" href="<?php echo base_url; ?>Usuarios">Usuarios</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Pruebas</a>
                                 </nav>
                             </div>
