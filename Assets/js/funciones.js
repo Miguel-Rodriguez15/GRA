@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function(){
     {
       'data' : 'password' 
     },
+    {
+      'data' : 'acciones'
+    }
     
   ]
   });

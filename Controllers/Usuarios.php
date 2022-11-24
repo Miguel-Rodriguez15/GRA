@@ -9,6 +9,13 @@ class Usuarios extends Controller{
     }
      public function listar(){
        $data = $this->model->getUsuarios();
+       for ($i=0; $i < count($data); $i++) { 
+          $data[$i]['acciones'] = '<div> 
+          <div> 
+          <button class="btn btn-primary" type="button">Editar</button>
+          <button class="btn btn-danger" type="button">Eliminar</button>
+          </div>';
+       }
        echo json_encode($data, JSON_UNESCAPED_UNICODE);
        die();
     }
@@ -31,7 +38,11 @@ class Usuarios extends Controller{
         echo json_encode($msg, JSON_UNESCAPED_UNICODE);
         die();
      }
-}
+
+    
+
+      
+    }
 
 
 ?>

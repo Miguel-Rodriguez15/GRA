@@ -13,7 +13,8 @@ include "Views/Templates/header.php";?>
             <th>Rol</th>
             <th>Telefono</th>
             <th>Usuario</th>
-            <th>Clave</th>
+            <th>Clave</th>      
+            <th></th>
         </tr>
     </thead>
     <tbody>
