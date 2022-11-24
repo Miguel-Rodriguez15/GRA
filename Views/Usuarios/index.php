@@ -1,9 +1,10 @@
 <?php 
 include "Views/Templates/header.php";?>
 <ol class="breadcrumb mb-4">
-   <li class="breadcrumb-item active">Usuarios</li>
+    <li class="breadcrumb-item active">Usuarios</li>
 </ol>
-<table class="table table-light" id="tblUsuarios">
+<button class="btn btn-primary mb-2" type="button" onclick="frmUsuario()" ;>Nuevo</button>
+<table class="table table-light-mb-2" id="tblUsuarios">
     <thead class="thead-dark">
         <tr>
             <th>ID</th>
@@ -13,7 +14,7 @@ include "Views/Templates/header.php";?>
             <th>Rol</th>
             <th>Telefono</th>
             <th>Usuario</th>
-            <th>Clave</th>      
+            <th>Clave</th>
             <th></th>
         </tr>
     </thead>
@@ -21,4 +22,78 @@ include "Views/Templates/header.php";?>
 
     </tbody>
 </table>
+<div id="nuevo_usuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="my-modal-title">Nuevo usuario</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="frmUsuarios">
+                    <div class="form-group">
+                        <label for="cedula">Cedula</label>
+                        <input id="cedula" class="form-control" type="text" name="cedula" placeholder="cedula">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input id="nombre" class="form-control" type="text" name="nombre" placeholder="nombre">
+                            </div>
+                        
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input id="apellido" class="form-control" type="text" name="apellido"
+                                    placeholder="apellido">
+                            </div>
+                        </div>      
+                    </div>
+                        <div class="form-group">
+                            <label for="rol">Rol</label>
+                            <select id="rol" class="form-control" name="rol">
+                                <option>administrador</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Telefono</label>
+                            <input id="telefono" class="form-control" type="text" name="telefono"
+                                placeholder="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="usuario">Usuario</label>
+                            <input id="usuario" class="form-control" type="email" name="usuario" placeholder="usuario">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="clave">clave</label>
+                                    <input id="clave" class="form-control" type="password" name="clave"
+                                        placeholder="clave">
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="confirmar">Confirme su clave</label>
+                                    <input id="confirmar" class="form-control" type="password" name="confirmar" placeholder="confirmar clave">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <button class="btn btn-primary " type="button">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <?php include "Views/Templates/footer.php";?>
