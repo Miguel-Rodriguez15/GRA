@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
       'data' : 'email' 
     },
     {
-      'data' : 'password' 
+      'data' : 'password'
     },
     
   ]
