@@ -63,8 +63,10 @@ class Usuarios extends Controller{
           $data = $this->model->registrarUsuario( $cedula,  $nombre,  $apellido,  $rol,  $telefono,  $usuario,  $clave);
            if ($data == "ok") {
                $msg = "si";
-            }else {
-             $msg = "Error al registrar el usuario";
+            }else if($data == "existe"){
+             $msg = "El usuario ya existe";
+            }else{
+                $msg ="Error al registrar el usuario";
             }
        
       }

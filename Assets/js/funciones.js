@@ -115,7 +115,7 @@ function registrarUser(e) {
         if(res == "si"){
           Swal.fire({
             position: 'top-end',
-            icon: 'error',
+            icon: 'success',
             title: 'Usuario registrado con exito',
             showConfirmButton: false,
             timer: 1500 

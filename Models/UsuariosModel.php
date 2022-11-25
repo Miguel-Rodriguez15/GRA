@@ -30,7 +30,10 @@ class UsuariosModel extends Query{
      $this->telefono = $telefono;
      $this->usuario = $usuario;
      $this->clave = $clave;
-     $sql = "INSERT INTO usuarios(cedula, nombre, apellido, rol, telefono, usuario, clave) VALUES (?,?,?,?,?,?,?)";
+     $verificar = "SELECT * FROM usuarios WHERE usuario = '$this->usuario'";
+     $existe = $this->select($verificar);
+     if(empty($existe)){
+           $sql = "INSERT INTO usuarios(cedula, nombre, apellido, rol, telefono, usuario, clave) VALUES (?,?,?,?,?,?,?)";
      $datos = array($this->cedula, $this->nombre, $this->apellido, $this->rol, $this->telefono, $this->usuario, $this->clave);
      $data = $this->save($sql, $datos);
      if ($data == 1) {
@@ -38,6 +41,10 @@ class UsuariosModel extends Query{
      }else {
       $res = "error";
      }
+   }else {
+      $res = "existe";
+   }
+ 
      return $res;
 
     
