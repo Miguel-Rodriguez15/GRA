@@ -4,6 +4,7 @@ include "Views/Templates/header.php";?>
     <li class="breadcrumb-item active">Usuarios</li>
 </ol>
 <button class="btn btn-primary mb-2" type="button" onclick="frmUsuario()" ;>Nuevo</button>
+
 <table class="table table-light-mb-2" id="tblUsuarios">
     <thead class="thead-dark">
         <tr>
@@ -33,7 +34,7 @@ include "Views/Templates/header.php";?>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" id="frmUsuarios">
+                <form method="POST" id="frmUsuario">
                     <div class="form-group">
                         <label for="cedula">Cedula</label>
                         <input id="cedula" class="form-control" type="text" name="cedula" placeholder="cedula">
@@ -54,11 +55,15 @@ include "Views/Templates/header.php";?>
                             </div>
                         </div>      
                     </div>
-                        <div class="form-group">
+                         <div class="form-group">
                             <label for="rol">Rol</label>
                             <select id="rol" class="form-control" name="rol">
-                                <option>administrador</option>
-
+                            <option value="1">administrador</option>
+                            <option value="2">programador de rutas</option>
+                            <option value="3">ciudadano</option>
+                            <option value="4">coordinador de operaciones</option>
+                            <option value="5">coordinador </option>
+                             <option value="6">conductor</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -90,7 +95,7 @@ include "Views/Templates/header.php";?>
                         </div>
 
                     </div>
-                    <button class="btn btn-primary " type="button">Registrar</button>
+                    <button class="btn btn-primary " type="button" onclick="registrarUser(event);">Registrar</button>
                 </form>
             </div>
         </div>

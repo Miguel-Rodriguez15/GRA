@@ -5,7 +5,10 @@ class Usuarios extends Controller{
     parent::__construct();
     }
     public function index(){
-     $this->views->getView($this, "index");
+      
+        $this->views->getView($this, "index" );
+
+
     }
      public function listar(){
        $data = $this->model->getUsuarios();
@@ -20,6 +23,7 @@ class Usuarios extends Controller{
        die();
     }
     public function validar(){
+
         if (empty($_POST['usuario']) || empty($_POST['clave']) ) {
            $msg = "los campos estan vacios";
         }else{
@@ -39,10 +43,39 @@ class Usuarios extends Controller{
         die();
      }
 
+     public function registrar()
+     {
+       $cedula = $_POST['cedula'];
+       $nombre = $_POST['nombre'];
+       $apellido = $_POST['apellido'];
+       $rol = $_POST['rol'];
+       $telefono = $_POST['telefono'];
+       $usuario = $_POST['usuario'];
+       $clave = $_POST['clave'];
+       $confirmar = $_POST['confirmar'];
+       if(empty($cedula) || empty($nombre) ||empty($apellido) ||empty($rol) ||empty($telefono) ||empty($usuario) || empty($clave) ||empty($confirmar)){
+
+        $msg = "Todos los campos son obligatorios";
+
+       }else if($clave != $confirmar) {
+        $msg = "las contraseña no coincide";
+       }else {
+          $data = $this->model->registrarUsuario( $cedula,  $nombre,  $apellido,  $rol,  $telefono,  $usuario,  $clave);
+           if ($data == "ok") {
+               $msg = "si";
+            }else {
+             $msg = "Error al registrar el usuario";
+            }
+       
+      }
+      echo json_encode($msg, JSON_UNESCAPED_UNICODE);
+       die();
+     }
+
     
 
       
     }
-
+   
 
 ?>
