@@ -1,3 +1,4 @@
+
 <?php
 class Usuarios extends Controller{
     public function __construct(){
@@ -21,12 +22,10 @@ class Usuarios extends Controller{
             $data[$i]['estado'] ='<span class="" >Inactivo</span>';
         }
 
-          $data[$i]['acciones'] = 
-          
-          '<div row> 
+          $data[$i]['acciones'] = '<div row> 
              <button class="btn btn-primary" type="button" onclick="btnEditarUser('.$data[$i]['id'].');"><i class="fas fa-edit"></i></button> 
-               <button class="btn btn-danger" type="button"  onclick="btnEliminarUser('.$data[$i]['id'].');"><i class="fas fa-trash-alt"></i></button>
-               <button class="btn btn-success" type="button"  onclick="btnReingresarUser('.$data[$i]['id'].');"><i">Reintegrar</i></button>
+               <button class="btn btn-danger" type="button"  onclick="btnEliminarUser('.$data[$i]['id'].');"><i class="fas fa-trash-alt"></i></button><div row> 
+               <button class="btn btn-success" type="button"  onclick="btnReingresarUser('.$data[$i]['id'].');"><i class="far fa-arrow-alt-circle-left""></i></button>
           </div>';
        }
        echo json_encode($data, JSON_UNESCAPED_UNICODE);

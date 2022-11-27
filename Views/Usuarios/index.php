@@ -17,7 +17,8 @@ include "Views/Templates/header.php";?>
             <th>Usuario</th>
             <th>Clave</th>
             <th>Estado</th>
-            <th></th>
+           <th></th>
+        
         </tr>
     </thead>
     <tbody>

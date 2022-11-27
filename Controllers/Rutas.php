@@ -34,67 +34,41 @@ class Rutas extends Controller{
        echo json_encode($data, JSON_UNESCAPED_UNICODE);
        die();
     }
-    public function validar(){
 
-        if (empty($_POST['usuario']) || empty($_POST['clave']) ) {
-           $msg = "los campos estan vacios";
-        }else{
-            $usuario = $_POST['usuario'];
-            $clave = $_POST['clave'];
-           
-            $data = $this->model->getUsuario($usuario, $clave);
-            if($data){
-                $_SESSION['id_usuario'] = $data['id'];
-                $_SESSION['usuario'] = $data['usuario'];
-                $_SESSION['nombre'] = $data['nombre'];
-                $_SESSION['activo'] = true;
-                $msg = "ok";
-            }else{
-                $msg = "usuario o contraseña incorrecta";
-            }
-        }
-        echo json_encode($msg, JSON_UNESCAPED_UNICODE);
-        die();
-     }
 
      public function registrar()
      {
-       $cedula = $_POST['cedula'];
-       $nombre = $_POST['nombre'];
-       $apellido = $_POST['apellido'];
-       $rol = $_POST['rol'];
-       $telefono = $_POST['telefono'];
-       $usuario = $_POST['usuario'];
-       $clave = $_POST['clave'];
-       $confirmar = $_POST['confirmar'];
-       $id = $_POST['id'];
+       $nom_ruta = $_POST['nom_ruta'];
+       $origen = $_POST['origen'];
+       $destino = $_POST['destino'];
+       $Hor_entrada = $_POST['Hor_entrada'];
+       $Hor_salida = $_POST['Hor_salida'];
+
 
        
-       if(empty($cedula) || empty($nombre) ||empty($apellido) ||empty($rol) ||empty($telefono) ||empty($usuario)){
+       if(empty($nom_ruta) || empty($origen) ||empty($destino) ||empty($Hor_entrada) ||empty($Hor_salida)){
 
         $msg = "Todos los campos son obligatorios";
 
        }else {
             if ($_POST['id'] == "") {
                 # code...
-                 if($clave != $confirmar) {
-                     $msg = "las contraseña no coincide";
-                 }else {
-                         $data = $this->model->registrarUsuario( $cedula,  $nombre,  $apellido,  $rol,  $telefono,  $usuario,  $clave);
+
+                         $data = $this->model->registrarRutas( $nom_ruta,  $origen,  $destino,  $Hor_entrada,  $Hor_salida);
                          if ($data == "ok") {
                           $msg = "si";
                           }else if($data == "existe"){                          
-                              $msg = "El usuario ya existe";
+                              $msg = "la ruta ya existe";
                           }else{
-                            $msg ="Error al registrar el usuario";
+                            $msg ="Error al registrar la ruta";
                            }
-                     }
+                     
             }else{
-                $data = $this->model->modificarUsuario( $cedula,  $nombre,  $apellido,  $rol,  $telefono,  $usuario,  $id);
+                $data = $this->model->modificarRutas( $nom_ruta,  $origen,  $destino,  $Hor_entrada,  $Hor_salida,  $id);
                 if ($data == "modificado") {
                  $msg = "modificado";
                  }else{
-                   $msg ="Error al mopdificar el usuario";
+                   $msg ="Error al modificar el ";
                   }
             }
       }

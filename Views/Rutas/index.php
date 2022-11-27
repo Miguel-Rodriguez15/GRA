@@ -14,6 +14,7 @@ include "Views/Templates/header.php";?>
             <th>Destino</th>
             <th>Hora de entrada</th>
             <th>Hora de salida</th>
+            
             <th></th>
         </tr>
     </thead>
@@ -32,59 +33,47 @@ include "Views/Templates/header.php";?>
             <div class="modal-body">
                 <form method="POST" id="frmRuta">
 
-                    <div class="form-group">
-                        <label for="cedula">Cedula</label>
-                        <input type="hidden" id="id" name="id">
-                        <input id="cedula" class="form-control" type="text" name="cedula" placeholder="cedula">
+                <div class="form-group">
+                        <label for="nom_ruta">Nombre de la ruta</label>
+                        <select id="nom_ruta" class="form-control" name="nom_ruta">
+                            <option value="1">A111</option>
+                            <option value="2">A101</option>
+                            <option value="3">A102</option>
+                            <option value="4">A107</option>
+
+                        </select>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="nombre">Nombre</label>
-                                <input id="nombre" class="form-control" type="text" name="nombre" placeholder="nombre">
+                                <label for="origen">Origen</label>
+                                <input id="origen" class="form-control" type="text" name="origen" placeholder="origen">
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="apellido">Apellido</label>
-                                <input id="apellido" class="form-control" type="text" name="apellido"
-                                    placeholder="apellido">
+                                <label for="destino">Destino</label>
+                                <input id="destino" class="form-control" type="text" name="destino"
+                                    placeholder="destino">
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="rol">Rol</label>
-                        <select id="rol" class="form-control" name="rol">
-                            <option value="1">administrador</option>
-                            <option value="2">programador de rutas</option>
-                            <option value="3">ciudadano</option>
-                            <option value="4">coordinador de operaciones</option>
-                            <option value="5">coordinador </option>
-                            <option value="6">conductor</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Telefono</label>
-                        <input id="telefono" class="form-control" type="text" name="telefono" placeholder="telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="usuario">Usuario</label>
-                        <input id="usuario" class="form-control" type="email" name="usuario" placeholder="usuario">
-                    </div>
-                    <div class="row " id="claves">
+
+
+                    <div class="row " id="Horas">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="clave">clave</label>
-                                <input id="clave" class="form-control" type="password" name="clave" placeholder="clave">
+                                <label for="Hor_entrada">Hora de entrada</label>
+                                <input id="Hor_entrada" class="form-control" type="text" name="Hor_entrada" placeholder="Hora de entrada">
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="confirmar">Confirme su clave</label>
-                                <input id="confirmar" class="form-control" type="password" name="confirmar"
-                                    placeholder="confirmar clave">
+                                <label for="Hor_salida">Hora de salida</label>
+                                <input id="Hor_salida" class="form-control" type="text" name="Hor_salida"
+                                    placeholder="Hora de salida">
 
                             </div>
                         </div>
@@ -92,7 +81,7 @@ include "Views/Templates/header.php";?>
                     </div>
 
             </div>
-            <button class="btn btn-primary " type="button" onclick="registrarUser(event);"
+            <button class="btn btn-primary " type="button" onclick="registrarRutas(event);"
                 id="btnAccion">Registrar</button>
                 
             </form>

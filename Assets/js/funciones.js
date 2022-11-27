@@ -262,18 +262,16 @@ function frmRuta() {
   $("#nuevo_rutas").modal("show");
   document.getElementById('id').value = "";
 }
-function registrarUser(e) {
+function registrarRutas(e) {
   e.preventDefault();
-  const cedula = document.getElementById("cedula");
-  const nombre = document.getElementById("nombre");
-  const apellido = document.getElementById("apellido");
-  const rol = document.getElementById("rol");
-  const telefono = document.getElementById("telefono");
-  const usuario = document.getElementById("usuario");
-  const clave = document.getElementById("clave");
-  const confirmar = document.getElementById("confirmar");
+  const nom_ruta = document.getElementById("nom_ruta");
+  const origen = document.getElementById("origen");
+  const destino = document.getElementById("destino");
+  const Hor_entrada = document.getElementById("Hor_entrada");
+  const Hor_salida = document.getElementById("Hor_salida");
 
-  if (cedula.value == "" || nombre.value == "" || apellido.value == "" || rol.value == "" || telefono.value == "" || usuario.value == ""  ) {
+
+  if (nom_ruta.value == "" || origen.value == "" || destino.value == "" || Hor_entrada.value == "" || Hor_salida.value == "") {
     Swal.fire({
       position: 'top-end',
       icon: 'error',
@@ -283,7 +281,7 @@ function registrarUser(e) {
     })
 
   } else {
-    const url = base_url + "Usuarios/registrar";
+    const url = base_url + "Rutas/registrar";
     const frm = document.getElementById("frmUsuario");
     const http = new XMLHttpRequest();
     http.open("POST", url, true);
@@ -295,23 +293,23 @@ function registrarUser(e) {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Usuario registrado con exito',
+            title: 'Ruta registrado con exito',
             showConfirmButton: false,
             timer: 1500 
           })
           frm.reset();
-          $("#nuevo_usuario").modal("hide");
-          tblUsuarios.ajax.reload();
+          $("#nuevo_rutas").modal("hide");
+         // tblUsuarios.ajax.reload();
         } else if (res == "modificado"){
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Usuario modificado con exito',
+            title: 'Ruta modificado con exito',
             showConfirmButton: false,
             timer: 1500 
           })
-          $("#nuevo_usuario").modal("hide");
-          tblUsuarios.ajax.reload();
+          $("#nuevo_rutas").modal("hide");
+          //tblUsuarios.ajax.reload();
         }else{Swal.fire({
             position: 'top-end',
             icon: 'error',
