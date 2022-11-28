@@ -3,7 +3,7 @@ include "Views/Templates/header.php";?>
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Rutas</li>
 </ol>
-<button class="btn btn-primary mb-2" type="button" onclick="frmRuta()" ;> <i class="fas fa-plus"></i> </button>
+<button class="btn btn-primary mb-2" type="button" onclick="frmRuta()";> <i class="fas fa-plus"></i> </button>
 
 <table class="table table-light-mb-2" id="tblRutas">
     <thead class="thead-dark">

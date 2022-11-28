@@ -55,7 +55,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; <a href="https://www.instagram.com/p/CeWzjotuVsN/"> Visite mi pagina web 2022</a>
+                        <div class="text-muted">Copyright &copy; <a href="https://www.google.com/maps/d/u/0/embed?mid=1tXj90OkIeKj5U2jKcYyisx0xGnB3WTqQ"> Ingresar como invitado</a>
                             <?php echo date("Y") ?>
                         </div>
                         <div>
